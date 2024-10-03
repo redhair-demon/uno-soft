@@ -31,7 +31,7 @@ public class Main {
     private static void readTree(String inputFilePath) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFilePath))) {
             String line;
-            Pattern pattern = Pattern.compile("(?:\"([^\"]*)\";?)+");
+            Pattern pattern = Pattern.compile("((\"([^\"]*)\")|(;))+");
             while ((line = reader.readLine()) != null) {
                 if (!pattern.matcher(line).matches()) continue;
                 processLine(line);
